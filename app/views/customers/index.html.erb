@@ -1,8 +1,11 @@
 <%- model_class = Customer -%>
-<div class="page-header">
+<div class="page-header center">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <div class="container">
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_customer_path,
+              :class => 'btn btn-primary' %>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -30,6 +33,7 @@
 
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -60,18 +64,17 @@
         <td><%=l customer.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_customer_path(customer), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      edit_customer_path(customer), :class => 'btn btn-sm btn-default' %>
+         </td>
+         <td><%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       customer_path(customer),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      :class => 'btn btn-sm btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_customer_path,
-            :class => 'btn btn-primary' %>
+
