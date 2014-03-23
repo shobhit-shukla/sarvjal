@@ -25,7 +25,7 @@ html, body {
 }
 body {
 	background: #f9f6f1;
-	font: 13px/1.7em 'Open Sans';
+	font: 13px/1.7em ;
 }
     
 p { 
@@ -395,7 +395,10 @@ h6{
 	
 	
 	-webkit-background-clip: padding-box;
-}	
+}
+    .widget-header i{
+        margin-left: 1em;
+    }
 	
 	.widget-header h3 {
 		
@@ -405,7 +408,8 @@ h6{
 		
 		display: inline-block;
 		margin-right: 3em;
-		
+		margin-top: 0px;
+
 		font-size: 14px;
 		font-weight: 800;
 		color: #525252;

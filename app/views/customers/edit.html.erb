@@ -1,5 +1,10 @@
 <%- model_class = Customer -%>
-<div class="page-header center">
-  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+<div class="container">
+  <div class="widget">
+    <div class="widget-header">
+        <h3><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h3>
+    </div>
+    <%= render :partial => 'form' %>
+  </div>
 </div>
-<%= render :partial => 'form' %>
+
